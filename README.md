@@ -1,1 +1,0 @@
-# Vinted_ByDjango

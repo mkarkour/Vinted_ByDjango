@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head> <title>welcome to Vinted</title>
+<body> <p>please login</p>
+<p>il est actuellement : {{ datetime }}</p>
+{% if error %}
+<p>{{ error }}</p>
+{% endif %}
+<form action="/login" method="get">
+      <p><h5>Email : <input type="email" name="email"></input></h5></p>
+      <p><h5>Password : <input type="password" name="password"></input></h5></p>
+      <p><input type="submit" value="Login!"></input></p>
+    </form>
+<p> Pas encore inscrit ? c'est<a href="http://127.0.0.1:8000/registration"!> ici </a></p>
+<p> Vous voulez vendre ? c'est par <a href="http://127.0.0.1:8000/registration_vendeur"!> là </a>
+ </body>
+</head>
+</html>

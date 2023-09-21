@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<form action="/showannonce" method="get">
+
+<h2>Postez une annonce</h2>
+<p> Le titre : <input type="text" name="titre"></input></p>
+<p> Choissisez une jolie description pour votre article : 
+<textarea id="descript" name="descript" rows="4" cols="50"></textarea>
+<p> Choissisez un prix : <input type=number" step=0.1 min=0 max=1000 name="prix"></input></p>
+<p><input type="submit" value="validez!"></input></p>
+
+
+<p>{{error}}</p>
+<p>{{succes}}</p>
+<table><thead><th>les annonces déjà existante</th></tr></thead>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #000000;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #FFB6C1;
+}
+</style>
+ <tr>
+    <th>Article</th>
+    <th>Prix</th>
+    <th>Description</th>
+    <th>Date de création</th>
+    <th>Vendeur</th>
+    <th>Numéro de l'annonce</th>
+    
+  </tr>
+ {% for b in post %}
+<tbody>
+ 
+  <tr>
+<tr><td>{{b.titre}}</td>
+    <td>{{b.prix}} &euro;</td>
+    <td>{{b.descript}}</td>
+    <td>{{b.created_at}}</td>
+    <td>{{b.createur}}</td>
+    <td>{{b.id_annonce}}</td>
+    
+</tr>
+{%endfor%}
+
+
+
+
+
+
+</table>
+<table>
+<thead><th>Vos annonces réservées</th></thead>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #000000;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #FFB6C1;
+}
+</style>
+<tbody><tr><th>Titre</th>
+           <th>Prix</th>
+           <th>Description</th>
+           <th>Date de création</th>
+           <th>Acheteur</th>
+           <th>Numéro de l'annonce</th>
+           <th>Enchère</th></tr>
+           
+{%for a in annonce%}
+<tr><td>{{a.titre}}</td>
+    <td>{{a.prix}} &euro;</td>
+    <td>{{a.descript}}</td>
+    <td>{{a.created_at}}</td>
+    <td>{{a.reservation}}</td>
+    <td>{{a.id_annonce}}</td>
+    <td>
+    {%for t in enchere%}
+    {%if a.titre == t.produit.titre%}
+    {{t.prix_enchere}}
+    {%endif%}
+    {%endfor%}</td>
+
+</tr>
+ {%endfor%}
+ </tbody>
+</table>
+<a href="http://127.0.0.1:8000/welcome"!> Retour</a>
+</form>
+
+</html>

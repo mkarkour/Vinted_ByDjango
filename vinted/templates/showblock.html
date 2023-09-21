@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><h2>Bienvenue sur la page pour bloquer</h2></head>
+<body>
+<form action="/showblock" action="get">
+<p> find a friend: 
+<select name="user" required>
+{%for u in user%}
+{%if u not in bloqué%}
+{% if u.firstname != user_connecte.fistname%}
+
+<option  name="user" value="{{u.firstname}}" > {{u.firstname}}  {{u.lastname}} </option>
+{%endif%}
+{%endif%}
+{%endfor%}
+<input type="submit" value="Block">
+
+<p>{{bloque}}</p>
+<p><a href="http://127.0.0.1:8000/welcome"!>Retour</a></p>
+</form>
+
+</body>
+</html>

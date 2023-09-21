@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head> <h1> welcome to Vinted </h1> </head>
+<body style="background-color:#90EE90;">
+{% if mehdi %}
+<p>Bienvenue cher {{nom}}, comment allez vous aujourd'hui ?</p>
+<p>{{datetime}}</p>
+<p>Consultez les annonces par <a href="http://127.0.0.1:8000/showannonce_filtre"!>ici</a></p>
+<p>Réserver votre annonce juste <a href="http://127.0.0.1:8000/reservation"_>ici</a></p>
+{%endif%}
+
+{% if anto %}
+<p>Bienvenue cher {{nom}}, prêt à vendre des articles ?</p>
+<p>{{datetime}}</p>
+<p>les annonces ça se passe par <a href="http://127.0.0.1:8000/showannonce"!>ici</a></p>
+{%endif%}
+
+{% if juju %}
+<p>Bienvenue cher {{nom}}, comment allez vous aujourd'hui ?</p>
+<p> N'oubliez pas que vous êtes également admin, pour rappel vous pouvez à tout moment changer certain mot</p>
+<p>{{datetime}}</p>
+<p>Consultez les annonces par <a href="http://127.0.0.1:8000/showannonce_filtre"!>ici</a></p>
+<p>Réserver votre annonce juste <a href="http://127.0.0.1:8000/reservation"_>ici</a></p>
+<p>Vous voulez ban des mots ?, c'est <a href="http://127.0.0.1:8000/showbanword"!>là</a></p>
+<p>Un utilisateur a bloqué ? <a href="http://127.0.0.1:8000/showblock"!> OUI</a></p>
+{%endif%}
+
+{% if geo %}
+<p> Bienvenue cher  {{nom}}, prêt à vendre des articles ?</p>
+<p>N'oubliez pas que vous avez la fonction admin activez avec celle ci vous pouvez changer certain mot </p>
+<p>{{datetime}}</p>
+<p>les annonces ça se passe par <a href="http://127.0.0.1:8000/showannonce"!>ici</a></p>
+<p>Vous voulez ban des mots ?, c'est <a href="http://127.0.0.1:8000/showbanword"!>là</a></p>
+<p>Un utilisateur a bloqué ? <a href="http://127.0.0.1:8000/showblock"!> OUI</a></p>
+{%endif%}
+
+{% if tout %}
+<p>Bienvenue sur le site {{nom}}</p>
+<p>Vous êtes à la fois vendeur et acheteur</p>
+<h5>Vous êtes également admin du site</h5>
+<p>{{datetime}}</p>
+<p>Pour postez une annonce, c'est <a href="http://127.0.0.1:8000/showannonce"!>ici</a></p>
+<p> Consultez les annonces, par <a href="http://127.0.0.1:8000/showannonce_filtre">là</a></p>
+<p>Réserver votre annonce juste <a href="http://127.0.0.1:8000/reservation"_>ici</a></p>
+<p>Vous voulez ban des mots ?, c'est <a href="http://127.0.0.1:8000/showbanword"!>là</a></p>
+<p>Un utilisateur a bloqué ? <a href="http://127.0.0.1:8000/showblock"!> OUI</a></p>
+{%endif%}
+
+{%if rien%}
+<p> Bienvenue cher {{nom}}, j'espere que vous allez bien</p>
+<h5> vous êtes à la fois vendeur et acheteur</h5>
+<p>{{datetime}}</p>
+<p>Postez une annonce, c'est <a href="http://127.0.0.1:8000/showannonce"!>ici</a></p>
+<p> Consultez les annonces, par <a href="http://127.0.0.1:8000/showannonce_filtre">là</a></p>
+<p>Réserver votre annonce juste <a href="http://127.0.0.1:8000/reservation"_>ici</a></p>
+{%endif%}
+<p><a href=/logout><input type="button" value="déconnexion"></input></a>
+ </body>
+
+</html>

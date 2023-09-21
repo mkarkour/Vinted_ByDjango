@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><h3>Réserver votre annonce</h3></head>
+<body>
+<form action="/reservation" method="get">
+<p>le numéro de l'article que vous souhaitez réserver : <input type="number" name="idl"></input></p>
+<p> Proposez une enchère ? : <input type="number" step=0.1 min=0 max=1000 name="enchere"></input></p>
+<p><input type="submit" value="Réserver"></input></p>
+
+{%if j%}
+<p>l'annonce a bien été réserver</p>
+{%endif%}
+
+<p>{{réservation}}</p>
+<p>{{error}}</p>
+<p>{{rien}}</p>
+</form>
+<p>Pour consulter vos annonces <a href="http://127.0.0.1:8000/showhistorique"!>ici</a>
+<p><a href="http://127.0.0.1:8000/welcome"!>Retour</a></p>
+
+</body>
+
+</html>

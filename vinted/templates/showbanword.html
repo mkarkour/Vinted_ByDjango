@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<Body>
+<h3> Bienvenue Banneur</h3>
+<p>bannissez votre mot</p>
+
+<form action= "/showbanword" method = "get"> 
+<p> Mot a ban : <input type="text" placeholder="mot initial" name="wordinit" required> </input></p>
+<p> Mot a remplacé : <input type="text" placeholder="mot final" name="wordfinal" required> </input></p>
+<input type="submit" value="Change!">
+
+
+
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+<table><tr><th>mot bannis</th>
+       <th>mot changer</th></tr>
+   {% for b in c %}
+   <tr><td>{{b.wordinit}}</td>
+       <td>{{b.wordfinal}}</td>
+       </tr>
+    {%endfor%}      
+</table>
+<p><a href="http://127.0.0.1:8000/welcome"!>Retour</a></p>
+</form>
+
+</Body>
+
+</html>

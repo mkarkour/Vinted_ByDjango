@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head><h3>Consultez vos Annonces réservé</h3></head>
+<body>
+<form action="/showhistorique" method="get">
+{%if not juju%}
+<table><style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #000000;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #90EE90;
+}
+</style>
+<tr><th>Annonce</th>
+    <th>Numéro de l'annonce</th>
+    <th>Date de création</th>
+    <th>Vendu par</th>
+    <th>Au prix de</th>
+    </tr>
+{%for r in reserve%}
+<tbody><tr><td>{{r.titre}}</td>
+           <td>{{r.id_annonce}}</td>
+           <td>{{r.created_at}}</td>
+           <td>{{r.createur}}</td>
+           <td>{{r.prix}}</td></tr>
+</tbody>
+
+{%endfor%}
+<p>Votre panier est de : {{panier}}</p>
+{%endif%}
+<p>{{sorry}}</p>
+
+</table>
+<a href="http://127.0.0.1:8000/reservation"! >Retour</a>
+</form>
+</body>
+
+
+
+</html>

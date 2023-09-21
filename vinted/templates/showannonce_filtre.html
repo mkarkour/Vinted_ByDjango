@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html><h2>Besoin de filtrer ?</h2>
+<body>
+<form action="/showannonce_filtre" method="get">        
+<p> Filtrer en fonction de la description : <input  name="descript" type="text"></input></p>
+<p> Filtrer en fonction du prix : <input type=number" step=0.1 min=0 max=1000 name="prix"></input></p>
+
+
+<p><input type="submit" value="validez!"></input></p>
+<p>{{error}}</p>
+
+
+
+{%if not error%}
+<table><table><thead><th>les annonces déjà existante</th></tr></thead>
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+ <tr>
+    <th>Article</th>
+    <th>Prix</th>
+    <th>Description</th>
+    <th>Date de création</th>
+    <th>Vendeur</th>
+    <th>Numéro de l'annonce</th>
+    <th>Etat de l'annonce</th>
+  </tr>
+  {%for b in annonce%}
+  <tbody>
+<tr><td>{{b.titre}}</td>
+<td>{{b.prix}} &euro;</td>
+    <td>{{b.descript}}</td>
+    <td>{{b.created_at}}</td>
+    <td>{{b.createur}}</td>
+    <td>{{b.id_annonce}}</td>
+    <td>{{b.etat}}</td>
+</tr>
+{%endfor%}
+</tbody></table>
+
+
+  
+   {%endif%}
+<a href="http://127.0.0.1:8000/welcome"!> Retour</a>
+
+
+</form>
+
+</body>
+
+</html>
